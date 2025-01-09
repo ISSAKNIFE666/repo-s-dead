@@ -9,18 +9,16 @@
 </head>
 <body>
 <h1>PhoneHub</h1>
-<form class="example" action="action_page.php">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
+<div class="searchcss">
+    <input class="search" placeholder="Search.." name="search">
+    <button class="searchbut"><i class="fa fa-search"></i></button>
+  </div>
 
     <select id="category-select">
-        <option value="">All Categories</option>
-        <option value="appel">apple</option>
+        <option value="cat">All Categories</option>
+        <option value="apple">apple</option>
         <option value="samsung">samsung</option>
-        <option value="oppo">oppo</option>
-        <option value="Samsung Galaxy">Samsung Galaxy</option>
-        <option value="Android">Android</option>
+        <option value="Oppo">oppo</option>
         <option value="Huawei">Huawei</option>
     </select>
 
@@ -36,8 +34,6 @@
 
 <br>
 <div id="content"></div>
-
-
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

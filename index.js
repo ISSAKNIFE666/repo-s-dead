@@ -13,13 +13,13 @@ function makePhone(brand,model,price,img,storage,quantity=1){
 
 // 
 var phones = [
-    makePhone("Apple", "iPhone 14", 799, "./images/iphone14.jpg", "128GB", 3),
-    makePhone("Samsung", "Galaxy S21", 999, "./images/images.jpg", "128GB", 2),
+    makePhone("apple", "iPhone 14", 799, "./images/iphone14.jpg", "128GB", 0),
+    makePhone("samsung", "Galaxy S21", 999, "./images/images.jpg", "128GB", 2),
     makePhone("Google", "Pixel 6", 599, "./images/pixel6.jpg", "128GB", 4),
     makePhone("OnePlus", "OnePlus 9", 729, "./images/oneplus9.jpg", "256GB", 1),
     makePhone("Xiaomi", "Mi 11", 749, "./images/mi11.jpg", "128GB", 5),
     makePhone("Sony", "Xperia 5 II", 949, "./images/xper5.jpg", "128GB", 2),
-    makePhone("Oppo", "Find X3 Pro", 1149, "./images/findx3.jpg", "256GB", 3),
+    makePhone("oppo", "Find X3 Pro", 1149, "./images/findx3.jpg", "256GB", 3),
     makePhone("LG", "V60 ThinQ", 799, "./images/v60.jpg", "128GB", 2),
     makePhone("Huawei", "P40 Pro", 899, "./images/p40pro.jpg", "256GB", 1),
     makePhone("Motorola", "Edge+", 999, "./images/edgemoto.jpg", "256GB", 4),
@@ -33,16 +33,36 @@ var phones = [
 
 // document.getElementById("phone1").innerHTML = phone1.brand+ " "+phone1.model + " priced at "+ phone1.price
 phones.map(function(el){
-    $('#content').append(`<div class="card">
-  <img src=${el.img} alt="Phone" style="width:30%">
-  <div class="container">
-    <h4><b>${el.model}</b></h4>
-    <p>${el.price+"$"}</p>
-  </div>
+  $('#content').append(`<div class="card">
+<img class="phones" src=${el.img} alt=${el.brand} style="width:30%">
+<div class="container">
+  <h4><b>${el.brand} ${el.model}</b></h4>
+  <p id="pr">${el.price+"$"}</p>
+  <p id="str">${el.storage}</p>
+</div>
 </div>`)
 })
 
 
+$("#category-select").on("change",function(){
+  $('.phones').each(function(){
+    if ($("#category-select").val().includes("All Categories")){
+      $(this).parent().show()
+    }
+    if($(this).attr("alt").toLowerCase().includes($("#category-select").val().toLowerCase())){
+          $(this).parent().show()
+      }
+      else {$(this).parent().hide()}
+  
+  })
+})
 
-
-$("#category-select")
+$(".searchbut").on("click",function(){
+  $('.phones').each(function(){
+    if($(this).attr("alt").toLowerCase().includes($(".search").val().toLowerCase())){
+          $(this).parent().show()
+      }
+      else {$(this).parent().hide()}
+  
+  })
+})
