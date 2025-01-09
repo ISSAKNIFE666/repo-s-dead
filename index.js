@@ -17,15 +17,15 @@ localStorage.setItem("phones",JSON.stringify(phones))
 
 
 function makePhone(brand,model,price,img,storage,quantity=1){
-    return {
-        brand:brand,
-        model:model,
-        price:price,
-        img:img,
-        storage :storage,
-        favorite :false,
-        quantity:quantity
-    }
+  return {
+      brand:brand,
+      model:model,
+      price:price,
+      img:img,
+      storage :storage,
+      favorite :false,
+      quantity:quantity
+  }
 }
 
 function selectCurrent(x){
@@ -49,6 +49,10 @@ phones.map(function(el,index){
 </div>
 </div>`)
 })
+
+
+
+
 
 
 $("#catsel").on("change",function(){
