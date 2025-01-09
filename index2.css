@@ -5,11 +5,7 @@
     margin-top: 3%;
 }
 .container{
-<<<<<<< HEAD
   padding: 15px;  
-=======
-  padding: 15px;
->>>>>>> 968c987ce038aa85f3f4d7932b6bb1bfc10522b4
 }
 
 .container h4{
@@ -32,8 +28,4 @@
 .container button:hover{
     background-color: rgb(8, 13, 0);
  color: rgb(61, 255, 47);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 968c987ce038aa85f3f4d7932b6bb1bfc10522b4
