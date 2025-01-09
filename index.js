@@ -56,5 +56,16 @@ $('#content').append(`<div class="card">
 
 
 
-
+$("#category-select").on("change",function(){
+  $('.phones').each(function(){
+    if ($("#category-select").val().includes("All Categories")){
+      $(this).parent().show()
+    }
+    if($(this).attr("alt").toLowerCase().includes($("#category-select").val().toLowerCase())){
+          $(this).parent().show()
+      }
+      else {$(this).parent().hide()}
+  
+  })
+})
 

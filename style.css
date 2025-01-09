@@ -17,7 +17,9 @@ a {
   }
 
   img{
-    width: 50px;
+    width: 100px;
+    height: 150px;
+    border-radius: 5px 5px 0 0;
   }
   #content{display: grid;
     grid-template-columns: auto auto auto;
@@ -29,9 +31,18 @@ a {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+<<<<<<< HEAD
     width: auto;
     
     display: flex;
+=======
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+>>>>>>> 4ca22603931763b86b7e73d841e5c976a4d1b857
   }
   
   /* On mouse-over, add a deeper shadow */
