@@ -1,3 +1,21 @@
+var phones = [
+    makePhone("Apple", "iPhone 15 Pro", 739, "./images/15pro.jpg", "256GB", 4),
+    makePhone("Apple", "iPhone 15 Pro Max", 949, "./images/15promax.jpg", "512GB", 0),
+    makePhone("Apple", "iPhone 16 ", 799, "./images/16.jpg", "128GB", 1),
+    makePhone("Apple", "iPhone 16 Plus", 899, "./images/16plus.jpg", "256GB", 5),
+    makePhone("Apple", "iPhone 16 Pro", 949, "./images/16pro.jpg", "512GB", 2),
+    makePhone("Apple", "iPhone 16 Pro Max", 1149, "./images/16promax.jpg", "1TB", 3),
+    makePhone("Samsung", "Galaxy S24 FE", 649, "./images/s24fe.jpg", "128GB", 2),
+    makePhone("Samsung", "Galaxy S24", 859, "./images/s24.jpg", "256GB", 2),
+    makePhone("Samsung", "Galaxy S24+", 999, "./images/s24+.jpg", "256GB", 1),
+    makePhone("Samsung", "Galaxy S24 Ultra", 1419, "./images/s24u.jpg", "512GB", 4),
+    makePhone("Samsung", "Galaxy Z Fold6 ", 1899, "./images/zfold.jpg", "256GB", 3),
+    makePhone("Samsung", "Galaxy Z Flip6", 1099, "./images/zflip.jpg", "256GB", 2),
+];
+localStorage.setItem("phones",JSON.stringify(phones))
+
+
+
 function makePhone(brand,model,price,img,storage,quantity=1){
     return {
         brand:brand,
@@ -10,33 +28,22 @@ function makePhone(brand,model,price,img,storage,quantity=1){
     }
 }
 
+function selectCurrent(x){
+  localStorage.setItem('current',JSON.stringify(x))
+  window.location.href="./index2.html"
+}
 
 // 
-var phones = [
-    makePhone("apple", "iPhone 14", 799, "./images/iphone14.jpg", "128GB", 0),
-    makePhone("samsung", "Galaxy S21", 999, "./images/images.jpg", "128GB", 2),
-    makePhone("Google", "Pixel 6", 599, "./images/pixel6.jpg", "128GB", 4),
-    makePhone("OnePlus", "OnePlus 9", 729, "./images/oneplus9.jpg", "256GB", 1),
-    makePhone("Xiaomi", "Mi 11", 749, "./images/mi11.jpg", "128GB", 5),
-    makePhone("Sony", "Xperia 5 II", 949, "./images/xper5.jpg", "128GB", 2),
-    makePhone("oppo", "Find X3 Pro", 1149, "./images/findx3.jpg", "256GB", 3),
-    makePhone("LG", "V60 ThinQ", 799, "./images/v60.jpg", "128GB", 2),
-    makePhone("Huawei", "P40 Pro", 899, "./images/p40pro.jpg", "256GB", 1),
-    makePhone("Motorola", "Edge+", 999, "./images/edgemoto.jpg", "256GB", 4),
-    makePhone("Asus", "ZenFone 8", 599, "./images/zenfone8.jpg", "128GB", 3),
-    makePhone("Realme", "GT 6", 699, "./images/gt6.jpg", "128GB", 2),
-    makePhone("Nokia", "8.3 5G", 649, "./images/nokia.jpg", "128GB", 1),
-    makePhone("Vivo", "V21 5G", 499, "./images/vivo.jpg", "128GB", 6),
-    makePhone("Lenovo", "Legion Phone Duel 2", 999, "./images/legion2.jpg", "512GB", 1)
-];
+var phones=JSON.parse( localStorage.getItem('phones'))
+console.log(phones);
 
 
 // document.getElementById("phone1").innerHTML = phone1.brand+ " "+phone1.model + " priced at "+ phone1.price
-phones.map(function(el){
+phones.map(function(el,index){
   $('#content').append(`<div class="card">
 <img class="phones" src=${el.img} alt=${el.brand} style="width:30%">
 <div class="container">
-  <h4><b>${el.brand} ${el.model}</b></h4>
+  <h4 class="currentSelection" data-index="${index}"><b>${el.brand} ${el.model}</b></h4>
   <p id="pr">${el.price+"$"}</p>
   <p id="str">${el.storage}</p>
 </div>
@@ -44,12 +51,12 @@ phones.map(function(el){
 })
 
 
-$("#category-select").on("change",function(){
+$("#catsel").on("change",function(){
   $('.phones').each(function(){
-    if ($("#category-select").val().includes("All Categories")){
+    if ($("#catsel").val().includes("All Categories")){
       $(this).parent().show()
     }
-    if($(this).attr("alt").toLowerCase().includes($("#category-select").val().toLowerCase())){
+    if($(this).attr("alt").toLowerCase().includes($("#catsel").val().toLowerCase())){
           $(this).parent().show()
       }
       else {$(this).parent().hide()}
@@ -65,4 +72,11 @@ $(".searchbut").on("click",function(){
       else {$(this).parent().hide()}
   
   })
+})
+
+
+$('.currentSelection').on('click',function(){
+  var index = $(this).data('index');
+  var selectedPhone = phones[index]; // Get the corresponding phone object
+  selectCurrent(selectedPhone);
 })
