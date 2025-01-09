@@ -54,5 +54,112 @@ a {
     margin-top: 20px;
     color: #2a5264d5; 
 }
+.searchcss {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.searchcss input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+.searchcss button {
+  padding: 10px;
+  background-color: #2a5264;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.searchcss button:hover {
+  background-color: #1b3649;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #9ea7ac;
+}
+nav li {
+  float: left;
+}
+nav a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+nav a:hover {
+  background-color: #1b3649;
+  border-radius: 5px;
+}
+
+nav button {
+  padding: 10px 15px;
+  color: white;
+  background-color: #e63946;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+nav button:hover {
+  background-color: #d62828;
+}
+#catsel {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+.container h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2a5264;
+}
+.container p {
+  color: #555;
+  font-size: 14px;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e2ddddd2;
+  color: #333;
+}
+.searchcss input {
+  width: 50%;
+}
+#catsel {
+  width: 80%;
+}
+nav li {
+  float: left;
+}
+
+
+
+
 
 
