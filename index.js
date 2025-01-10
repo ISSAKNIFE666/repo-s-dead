@@ -38,7 +38,6 @@ var phones=JSON.parse( localStorage.getItem('phones'))
 console.log(phones);
 
 
-// document.getElementById("phone1").innerHTML = phone1.brand+ " "+phone1.model + " priced at "+ phone1.price
 phones.map(function(el,index){
   $('#content').append(`<div class="card">
 <img class="phones" src=${el.img} alt=${el.brand} style="width:30%">
