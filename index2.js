@@ -14,7 +14,11 @@ $('#content2').append(`<div class="card">
 
 
 $(".orderButton").on('click',function(){
-    if (currentPhone.quantity===0){alert('out of storage')}
-
-    window.location.href='./order.html'
+  if (currentPhone.quantity===0){alert('The phone has been deleted sorry !')
+    window.location.href='./index.html'}
+  else{
+     window.location.href='./order.html'}
 })
+
+
+

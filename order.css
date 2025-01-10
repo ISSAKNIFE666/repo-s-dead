@@ -6,6 +6,7 @@ body {
     margin-top: 4%;
     margin-right: auto;
     overflow-x: hidden;
+    background-color: #e2ddddd2;
   }
   
   * {
@@ -68,7 +69,7 @@ body {
   }
   
   .btn {
-    background-color: #04AA6D;
+    background-color: rgb(61, 255, 47);
     color: white;
     padding: 12px;
     margin: 10px 0;
@@ -80,7 +81,8 @@ body {
   }
   
   .btn:hover {
-    background-color: #45a049;
+    background-color: rgb(8, 13, 0);
+    color: rgb(61, 255, 47);
   }
   
   a {
@@ -105,3 +107,18 @@ body {
       margin-bottom: 20px;
     }
   }
+
+  #doneor{
+    text-align: center;
+  }
+  #logo{
+    float: left;
+    width: 100px;
+    }
+    #main-title {
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+      font-size: 36px;
+      margin-top: 20px;
+      color: darkblue; 
+    }

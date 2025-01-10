@@ -1,4 +1,4 @@
-.card{
+    .card{
     display: flex   ;
     background-color: rgb(245, 245, 245);
     border-radius: 30px;
@@ -29,3 +29,83 @@
     background-color: rgb(8, 13, 0);
  color: rgb(61, 255, 47);
 }
+
+
+.card {
+    display: flex;
+    background-color: #f9f9f9; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto; 
+    max-width: 800px; 
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 10px;
+}
+.container #pr {
+    color: #a03737; 
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.container button {
+    background-color: #3dff2f; 
+    width: 100px;
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+.container button:hover {
+    background-color: #080d00; 
+    color: #3dff2f; 
+}
+.card img {
+    width: 150px;
+    height: auto;
+    border-radius: 20px 0 0 20px; 
+    object-fit: cover; 
+}
+#content2 {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px;
+}
+body {
+    background-color: #e2ddddd2;
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+#logo{
+    float: left;
+    width: 100px;
+    }
+    #main-title {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        font-size: 36px;
+        margin-top: 20px;
+        color: darkblue; 
+      }
